@@ -1,0 +1,28 @@
+[
+    { 
+        "id":"1234",
+        "vehicletype": "Truck",
+        "vehiclenumber": "DL 400",
+        "modelnumber": 100
+    },
+    {
+         "id":"12345",
+        "vehicletype": "Car",
+        "vehiclenumber": "HR 500",
+        "modelnumber": 110
+    },
+
+        {
+            "id":"123456",
+            "vehicletype": "Bus",
+            "vehiclenumber": "UP 200",
+            "modelnumber": 120
+        },
+        {
+            "id":"1234567",
+            "vehicletype": "Bike",
+            "vehiclenumber": "HP 300",
+            "modelnumber": 130
+        }
+
+]
