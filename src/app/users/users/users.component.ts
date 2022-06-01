@@ -15,6 +15,8 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class UsersComponent implements OnInit {
   modalRef?: BsModalRef;
   users$: Observable<User[]>;
+  displayedColumns: string[] = ['vehicletype', 'vehiclenumber', 'modelnumber','action'];
+  
 
   userToBeUpdated: User;
 

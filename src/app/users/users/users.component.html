@@ -1,4 +1,4 @@
-<div class="">
+<!--<div class="">
     <table class="table table-dark">
       <thead>
         <tr>
@@ -19,13 +19,38 @@
           </td>
         </tr>
       </tbody>
+    </table> -->
+  
+    <table mat-table [dataSource]="users$" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="vehicletype">
+        <th mat-header-cell *matHeaderCellDef> Vehicle Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.vehicletype}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="vehiclenumber">
+        <th mat-header-cell *matHeaderCellDef> Vehicle Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.vehiclenumber}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="modelnumber">
+        <th mat-header-cell *matHeaderCellDef> Model Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.modelnumber}} </td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td *matCellDef="let element">
+          <button (click)="showUpdateForm(element);openModal(template)" class="btn btn-primary" style="margin: 5px" >Update</button>
+          <button (click)="deleteUser(element.id)" class="btn btn-danger" style="margin: 5px">Delete</button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   
-    
-  </div>
   <ng-template #template>
     <div class="modal-header">
-      <h4 class="modal-title pull-left"><span *ngIf="isUpdateActivated">Update</span> User</h4>
+      <h4 class="modal-title pull-left"><span *ngIf="isUpdateActivated">Update</span> Vehicle</h4>
       <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
         <span aria-hidden="true" class="visually-hidden">&times;</span>
       </button>
@@ -45,7 +70,7 @@
               style="width: 400px"/>
           </div>
           <div class="form-group">
-            <label for="side">Vehicle Type</label>
+            <label for="side">Vehicle Number</label>
             <input
               type="text"
               id="email"
@@ -68,6 +93,6 @@
             </div>
           <button [disabled]="updateForm.invalid" class="btn btn-primary mt-2" type="submit">Update</button>
         </form>
-      </div>
-    </div>
-  </ng-template>
+      
+    
+  

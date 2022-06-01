@@ -1,6 +1,6 @@
-<div class="container mt-5">
+<!--<div class="container mt-5">
   <div>
-      <ul class="nav nav-pills">
+     <ul class="nav nav-pills">
         <li class="nav-item m-2">
           <a class="nav-link " routerLink="users" routerLinkActive="active">List Vehicles</a>
         </li>
@@ -10,8 +10,19 @@
       </ul>
   </div>
 
-  <div style="margin-top: 20px;">
-      <router-outlet></router-outlet>
-  </div>
+  <div style="margin-top: 20px;">-->
+   <div class="choose">
+  
+    <button mat-raised-button color="primary" routerLink="users" routerLinkActive="active">List Vehicles</button>
 
-</div>
+    <button mat-raised-button color="accent" routerLink="users/create-user" routerLinkActive="active">Create Vehicle</button>
+    
+   </div>
+
+
+
+
+
+
+      <router-outlet></router-outlet>
+

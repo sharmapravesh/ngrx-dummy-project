@@ -10,6 +10,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { RouterModule } from '@angular/router';
 import {UserResolver} from './services/user.resolver';
 import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from '../Material Module/material.module';
+
 const routes = [
   {
     path: '',
@@ -33,7 +35,8 @@ const routes = [
     HttpClientModule,
     RouterModule.forChild(routes),
     StoreModule.forFeature('users',userReducer),
-    EffectsModule.forRoot([UserEffects])
+    EffectsModule.forRoot([UserEffects]),
+    MaterialModule
   ],
   providers:[UserResolver]
 })
